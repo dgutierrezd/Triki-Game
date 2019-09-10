@@ -52,15 +52,28 @@ def graphicTriki(estado):
     
 def jugadaPlayer(boton, estado):
     if estado is True:
-        boton['text'] = X
+        boton['text'] = 'X'
         boton['state'] = DISABLED
         jugadaCPU()
     else:
         return boton
 
 def jugadaCPU():
+    buttons = {}
+    
     randomNum = random.randint(1,9)
-    print(randomNum)
+    #boton = f'space{randomNum}'
+    space = 'El boton'
+    buttons[space] = f'space{randomNum}'
+    boton = buttons[space]
+    print(boton[state])
+    
+    #if boton['state'] == DISABLED:
+     #   jugadaCPU()
+    #else:
+     #   boton['text'] = 'O'
+      #  boton['state'] = DISABLED
+        
 
 graphicTriki(False)
 tk.mainloop()
