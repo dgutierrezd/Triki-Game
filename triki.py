@@ -16,6 +16,7 @@ Created on Mon Sep  9 19:40:55 2019
 from functools import partial
 import random
 import tkinter as tk
+from tkinter import messagebox
 
 root = tk.Tk()
 
@@ -53,7 +54,7 @@ def jugadaPlayer(boton, estado):
     verificarEspacios()
     if estado is True:
         boton['text'] = 'X'
-        boton['state'] = DISABLED
+        boton['state'] = tk.DISABLED
         verificarEspacios()
         generarNumeroRandom()
     else:
@@ -61,13 +62,13 @@ def jugadaPlayer(boton, estado):
 
 def jugadaCPU(boton):    
     verificarEspacios()
-    print(boton)
+    print(boton['text'])
     if boton['text'] is 'X' or boton['text'] is 'O':
         generarNumeroRandom()
         return
     else:
         boton['text'] = 'O'
-        boton['state'] = DISABLED
+        boton['state'] = tk.DISABLED
         verificarEspacios()
         
         
